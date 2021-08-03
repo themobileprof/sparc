@@ -1,0 +1,25 @@
+@extends('layouts.app')
+@section('title')
+    Sponsor Details 
+@endsection
+@section('content')
+    <section class="section">
+        <div class="section-header">
+        <h1>Sponsor Details</h1>
+        <div class="section-header-breadcrumb">
+            <a href="{!! route('sponsors.edit', [$sponsor->id]) !!}"
+                 class="btn btn-primary form-btn float-right mr-2">Edit</a>
+            <a href="{{ route('sponsors.index') }}"
+                 class="btn btn-primary form-btn float-right">Back</a>
+        </div>
+      </div>
+   @include('stisla-templates::common.errors')
+    <div class="section-body">
+           <div class="card">
+            <div class="card-body">
+                    @include('sponsors.show_fields')
+            </div>
+            </div>
+    </div>
+    </section>
+@endsection
