@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\API;
+use App\Http\Controllers\API\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +18,8 @@ use Illuminate\Support\Facades\Route;
     //return $request->user();
 //});
 
-Route::post('/auth/register', [API\AuthController::class, 'register']);
-Route::post('/auth/login', [API\AuthController::class, 'login']);
+Route::post('/auth/register', [AuthController::class, 'register']);
+Route::post('/auth/login', [AuthController::class, 'login']);
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
 	Route::resource('countries', CountryAPIController::class);

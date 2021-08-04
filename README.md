@@ -1,62 +1,85 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://github.com/themobileprof/sparc/blob/main/public/img/logo.png" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## sparc.africa API
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This is the SPARC API and Backend built on Laravel. To deploy locally, follow the steps below:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Requirements
+Install:
+- PHP
+- Composer
+- NPM
+- A database (MySQl or SQLite recommended)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Deployment Steps
 
-## Learning Laravel
+- Clone this repo to your system
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```
+git clone https://github.com/themobileprof/sparc.git
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+From inside the cloned folder, continue the following steps:
+- Copy .env.example to .env, and edit the database details to connect to your database
+- Run `php artisan key:generate` to generate a new Application Key
+- Run `composer install` to install PHP dependencies
+- Run `npm install` to install JavaScript dependencies
+- Run `php artisan migrate` to migrate the database schema to your database
+- Run `php artisan serve` to start the PHP server
 
-## Laravel Sponsors
+Open your browser to **http://localhost:8000** and click on ***register*** to start registration
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## API Access
 
-### Premium Partners
+The API route is at **http://localhost:8000/api/**
+### Registration and Login API
+To get the Bearer Tokens you need to access API content
+- api/auth/register
+- api/auth/login
+- api/auth/logout
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+### API Resources:
+- api/countries
+Verb | URI | Description
+---- | --- | ------
+GET | /countries | List all
+POST | /countries | Save an Item
+GET | /countries/{country} | Show an Item
+PUT/PATCH | /countries/{country} | Update an Item
+DELETE | /countries/{country} | Delete an Item
+- context_entries
+Verb | URI | Description
+---- | --- | ------
+GET | /context_entries | List all
+POST | /context_entries | Save an Item
+GET | /context_entries/{context} | Show an Item
+PUT/PATCH | /context_entries/{context} | Update an Item
+DELETE | /context_entries/{context} | Delete an Item
+- component_entries
+Verb | URI | Description
+---- | --- | ------
+GET | /component_entries | List all
+POST | /component_entries | Save an Item
+GET | /component_entries/{component} | Show an Item
+PUT/PATCH | /component_entries/{component} | Update an Item
+DELETE | /component_entries/{component} | Delete an Item
+- sponsors
+Verb | URI | Description
+---- | --- | ------
+GET | /sponsors | List all
+POST | /sponsors | Save an Item
+GET | /sponsors/{sponsor} | Show an Item
+PUT/PATCH | /sponsors/{sponsor} | Update an Item
+DELETE | /sponsors/{sponsor} | Delete an Item
+- purchasing_functions
+Verb | URI | Description
+---- | --- | ------
+GET | /purchasing_functions | List all
+POST | /purchasing_functions | Save an Item
+GET | /purchasing_functions/{functions} | Show an Item
+PUT/PATCH | /purchasing_functions/{functions} | Update an Item
+DELETE | /purchasing_functions/{functions} | Delete an Item
 
-## Contributing
+PS: To list all end points, run `php artisan route:list`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
