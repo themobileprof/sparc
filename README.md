@@ -41,6 +41,7 @@ To get the Bearer Tokens you need to access API content
 
 ### API Resources:
 - api/countries
+
 Verb | URI | Description
 ---- | --- | ------
 GET | /countries | List all
@@ -48,7 +49,9 @@ POST | /countries | Save an Item
 GET | /countries/{country} | Show an Item
 PUT/PATCH | /countries/{country} | Update an Item
 DELETE | /countries/{country} | Delete an Item
+
 - context_entries
+
 Verb | URI | Description
 ---- | --- | ------
 GET | /context_entries | List all
@@ -56,7 +59,9 @@ POST | /context_entries | Save an Item
 GET | /context_entries/{context} | Show an Item
 PUT/PATCH | /context_entries/{context} | Update an Item
 DELETE | /context_entries/{context} | Delete an Item
+
 - component_entries
+
 Verb | URI | Description
 ---- | --- | ------
 GET | /component_entries | List all
@@ -64,7 +69,9 @@ POST | /component_entries | Save an Item
 GET | /component_entries/{component} | Show an Item
 PUT/PATCH | /component_entries/{component} | Update an Item
 DELETE | /component_entries/{component} | Delete an Item
+
 - sponsors
+
 Verb | URI | Description
 ---- | --- | ------
 GET | /sponsors | List all
@@ -72,7 +79,9 @@ POST | /sponsors | Save an Item
 GET | /sponsors/{sponsor} | Show an Item
 PUT/PATCH | /sponsors/{sponsor} | Update an Item
 DELETE | /sponsors/{sponsor} | Delete an Item
+
 - purchasing_functions
+
 Verb | URI | Description
 ---- | --- | ------
 GET | /purchasing_functions | List all
