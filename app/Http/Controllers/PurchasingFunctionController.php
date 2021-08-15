@@ -30,7 +30,13 @@ class PurchasingFunctionController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $purchasingFunctions = $this->purchasingFunctionRepository->all();
+		if ($request->filled("search")){
+			$search = ['country_id'=>$request->input("search")];
+		} else {
+			$search = [];
+		}
+
+        $purchasingFunctions = $this->purchasingFunctionRepository->all($search);
 
         return view('purchasing_functions.index')
             ->with('purchasingFunctions', $purchasingFunctions);

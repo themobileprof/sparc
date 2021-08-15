@@ -31,7 +31,13 @@ class ContextEntryController extends AppBaseController
      */
     public function index(Request $request)
     {
-		$contextEntries = $this->contextEntryRepository->all();
+		if ($request->filled("search")){
+			$search = ['country_id'=>$request->input("search")];
+		} else {
+			$search = [];
+		}
+
+		$contextEntries = $this->contextEntryRepository->all($search);
         //$contextEntries = ContextEntry::all();
 
         return view('context_entries.index')

@@ -31,7 +31,13 @@ class ComponentEntryController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $componentEntries = $this->componentEntryRepository->all();
+		if ($request->filled("search")){
+			$search = ['country_id'=>$request->input("search")];
+		} else {
+			$search = [];
+		}
+
+        $componentEntries = $this->componentEntryRepository->all($search);
 
         return view('component_entries.index')
             ->with('componentEntries', $componentEntries);

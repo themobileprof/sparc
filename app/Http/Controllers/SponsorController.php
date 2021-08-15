@@ -30,7 +30,13 @@ class SponsorController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $sponsors = $this->sponsorRepository->all();
+		if ($request->filled("search")){
+			$search = ['country_id'=>$request->input("search")];
+		} else {
+			$search = [];
+		}
+
+        $sponsors = $this->sponsorRepository->all($search);
 
         return view('sponsors.index')
             ->with('sponsors', $sponsors);
